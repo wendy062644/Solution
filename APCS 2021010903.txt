@@ -1,0 +1,29 @@
+#include <vector>
+#include <set>
+#include <iostream>
+#include <map>
+#include <algorithm>
+using namespace std;
+int n,l;
+pair<int,int> num[200001];
+int main()
+{
+	int n,l;
+	long long int t=0;
+	cin>>n>>l;
+	for(int a=0;n>a;a++)
+	{
+		cin>>num[a].second>>num[a].first;
+	}
+	sort(num,num+n);
+	set<int> num2;
+	num2.insert(0);
+	num2.insert(l);
+	for(int a=0;n>a;a++)
+	{
+		auto aa=num2.upper_bound(num[a].second);
+		t=t+*aa-*prev(aa);
+		num2.insert(num[a].second);
+	}
+	cout<<t<<endl;
+}
