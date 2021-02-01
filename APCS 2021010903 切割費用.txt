@@ -27,3 +27,6 @@ int main()
 	}
 	cout<<t<<endl;
 }
+
+說明: 利用陣列num的first紀錄順序、second紀錄切割點，再依序切割下去。
+      利用insert來輸入數字的話可以減少排序所花費的時間，aa用來記錄大於切割點的最小數字，prev用來找小於aa的最大數字。
