@@ -1,0 +1,45 @@
+#include<bits/stdc++.h>
+using namespace std;
+string word[11];
+one(int n,int m,bool num[11],int num2[11])
+{
+	if(m+1==n){
+	int t=0;
+	for(int a=1;n>a;a++)
+	{
+		int ma=0;
+		char word1=word[a-1];
+		char word2=word[a];
+		int k=strlen(word1),l=strlen(word2);
+		for(int b=k-1;b>=0;b--)
+		{
+			for(int c=0;l>c;c++)
+			{
+				if(word1[b]==word2[c]){}
+			}
+		}
+	}
+	}
+	else{
+		for(int a=0;n>a;a++)
+		{
+			if(num[a]==0){
+			num[a]=1;num2[m]=a;
+			one(n,m+1,num,num2);
+			}
+		}
+	}
+}
+int main()
+{
+	int n;
+	bool num[11]={0};
+	int num2[11]={0};
+	cin>>n;
+	for(int a=0;n>a;a++)
+	{
+		cin>>word;
+	}
+	for(int b=0;n>b;b++)
+	{one(n,0,num,num2);}
+}
